@@ -18,53 +18,61 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.035" />
 
-    <Button
+    <ImageButton
         android:id="@+id/liikunta"
-        android:layout_width="137dp"
-        android:layout_height="112dp"
-        android:text="Liikunta"
+        android:layout_width="150dp"
+        android:layout_height="136dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.138"
+        app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.271" />
+        app:layout_constraintVertical_bias="0.213"
+        app:srcCompat="@drawable/runner" />
 
-    <Button
-        android:id="@+id/uni"
-        android:layout_width="137dp"
-        android:layout_height="109dp"
-        android:text="Uni"
+    <ImageButton
+        android:id="@+id/Uni"
+        android:layout_width="150dp"
+        android:layout_height="134dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.861"
+        app:layout_constraintHorizontal_bias="0.858"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.274" />
+        app:layout_constraintVertical_bias="0.212"
+        app:srcCompat="@drawable/sleeping" />
 
-    <Button
+    <ImageButton
         android:id="@+id/Ravinto"
-        android:layout_width="132dp"
-        android:layout_height="111dp"
-        android:text="Ravinto"
+        android:layout_width="148dp"
+        android:layout_height="149dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.629" />
+        app:layout_constraintVertical_bias="0.57"
+        app:srcCompat="@drawable/nutrition" />
 
-    <Button
+    <ImageButton
         android:id="@+id/Fiilis"
-        android:layout_width="131dp"
-        android:layout_height="117dp"
-        android:text="Fiilis"
+        android:layout_width="156dp"
+        android:layout_height="158dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintHorizontal_bias="0.878"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.635" />
+        app:layout_constraintVertical_bias="0.563"
+        app:srcCompat="@drawable/emotion" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
