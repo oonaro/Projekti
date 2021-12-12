@@ -2,47 +2,57 @@ package com.example.projekti;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
-
-import org.json.JSONException;
-import org.json.JSONObject;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class Liikunta extends AppCompatActivity {
 
-    private Button send;
-    private EditText arkiliikunta;
-    private EditText aktiiviliikunta;
+    EditText name;
+    Button button;
+    ImageButton imageButton;
+    SharedPreferences sp;
+    String nameStr;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liikunta);
 
-        /**
-         * Ensimmäinen dropdownvalikko
-         */
 
-        Spinner mySpinner1 = (Spinner) findViewById(R.id.spinner1);
+        name = findViewById(R.id.editTextNumber);
+        button = findViewById(R.id.tallenna);
+        imageButton = findViewById(R.id.tarkastele);
 
-        ArrayAdapter<String> myAdapter1 = new ArrayAdapter<String>(Liikunta.this,
-                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.Ravinto));
-        myAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mySpinner1.setAdapter(myAdapter1);
+        sp = getSharedPreferences( "Nimi tähä", Context.MODE_PRIVATE);
 
-        send = (Button) findViewById(R.id.send);
-        arkiliikunta = (EditText) findViewById(R.id.editTextNumber);
-        aktiiviliikunta = (EditText) findViewById(R.id.editTextNumber2);
-
-        send.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
+                nameStr = name.getText().toString();
+
+                SharedPreferences.Editor editor = sp.edit();
+
+                editor.putString("name", nameStr);
+                editor.commit();
+                Toast.makeText(Liikunta.this, "Information saved", Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Liikunta.this, Liikuntainfo.class);
+                startActivity(intent);
             }
         });
     }
 }
-

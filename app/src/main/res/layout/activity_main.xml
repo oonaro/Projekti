@@ -31,7 +31,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.35"
-        app:srcCompat="@drawable/runner" />
+        app:srcCompat="@drawable/runner2" />
 
     <ImageButton
         android:id="@+id/Uni"
@@ -46,7 +46,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.35"
-        app:srcCompat="@drawable/sleeping" />
+        app:srcCompat="@drawable/sleeping2" />
 
     <ImageButton
         android:id="@+id/Ravinto"
