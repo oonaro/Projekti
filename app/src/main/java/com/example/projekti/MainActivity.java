@@ -3,9 +3,12 @@ package com.example.projekti;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 /**
  * Tähän projektin nimi
@@ -14,13 +17,22 @@ import android.widget.ImageButton;
  */
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Dialog.DialogListener{
 
     private ImageButton buttonLiikunta;
     private ImageButton buttonUni;
     private ImageButton buttonRavinto;
     private ImageButton buttonFiilis;
 
+    private TextView tvPituus;
+    private TextView tvPaino;
+    private TextView tvIka;
+    private TextView tvNimi;
+    private Button muutaTietoja;
+    private String prefPituus;
+    private String prefPaino;
+    private String prefIka;
+    private String prefNimi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +43,36 @@ public class MainActivity extends AppCompatActivity {
         buttonUni = (ImageButton) findViewById(R.id.Uni);
         buttonRavinto = (ImageButton) findViewById(R.id.Ravinto);
         buttonFiilis = (ImageButton) findViewById(R.id.Fiilis);
+
+        SharedPreferences prefGet = getSharedPreferences("Info", MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("Start", MODE_PRIVATE);
+        boolean start= sp.getBoolean("Once", true);
+
+        if (start){
+            openDialog();
+            SharedPreferences sps = getSharedPreferences("Once", MODE_PRIVATE);
+            SharedPreferences.Editor spsEditor = sps.edit();
+            spsEditor.putBoolean("Once", false);
+            spsEditor.commit();
+        }
+
+        tvPituus = (TextView) findViewById(R.id.tv_pituus);
+        tvPaino = (TextView) findViewById(R.id.tv_paino);
+        tvIka = (TextView) findViewById(R.id.tv_ika);
+        tvNimi = (TextView) findViewById(R.id.tv_nimi);
+        muutaTietoja = (Button) findViewById(R.id.muutaTietoja);
+
+        muutaTietoja.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialog();
+            }
+        });
+
+        tvNimi.setText(prefGet.getString("prefNimi", "Nimi"));
+        tvPituus.setText(prefGet.getString("prefPituus", "Pituus"));
+        tvPaino.setText(prefGet.getString("prefPaino", "Paino"));
+        tvIka.setText(prefGet.getString("prefIka", "Ikä"));
 
 
         /**
@@ -88,5 +130,49 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    /**
+     * Tietoikkunan avaamiseen käytetty metodi
+     */
+
+    public void openDialog(){
+        Dialog dialog = new Dialog();
+        dialog.show(getSupportFragmentManager(), "dialog");
+    }
+
+    /**
+     *
+     * @param pituus = käyttäjän asettama pituusmuuttuja
+     * @param paino = käyttäjän asettama painomuuttuja
+     * @param ika = käyttäjän asettama ikämuuttuja
+     * @param nimi = käyttäjän asettama ikämuuttuja
+     *
+     * Arvojen hakeminen Dialog-luokasta ja niiden tulostaminen näytölle
+     */
+
+    @Override
+    public void getInfo(String pituus, String paino, String ika, String nimi) {
+
+        tvNimi.setText("Hei, " + nimi);
+        tvPituus.setText("Pituus: " + pituus + "cm");
+        tvPaino.setText("Paino: " + paino + "kg");
+        tvIka.setText("Ikä: " + ika);
+        prefPituus = pituus;
+        prefPaino = paino;
+        prefIka = ika;
+        prefNimi = nimi;
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SharedPreferences prefPut = getSharedPreferences("Info", MODE_PRIVATE);
+        SharedPreferences.Editor prefEditor = prefPut.edit();
+        prefEditor.putString("prefPituus", prefPituus);
+        prefEditor.putString("prefPaino", prefPaino);
+        prefEditor.putString("prefIka", prefIka);
+        prefEditor.putString("prefNimi", prefNimi);
+        prefEditor.commit();
     }
 }

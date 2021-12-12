@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <EditText
+
+        android:id="@+id/editNimi"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:hint="Nimi" />
+
+    <EditText
+        android:id="@+id/editPituus"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editNimi"
+        android:inputType="number"
+        android:hint="Pituus" />
+
+    <EditText
+        android:id="@+id/editPaino"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editPituus"
+        android:inputType="number"
+        android:hint="Paino" />
+
+    <EditText
+
+        android:id="@+id/editIka"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editPaino"
+        android:inputType="number"
+        android:hint="Ikä" />
+
+</RelativeLayout>

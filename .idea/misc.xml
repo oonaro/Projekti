@@ -4,11 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.20052083333333334" />
-        <entry key="app/src/main/res/layout/activity_fiilis.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/activity_liikunta.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.22258332964589989" />
-        <entry key="app/src/main/res/layout/activity_uni.xml" value="0.4902687673772011" />
+        <entry key="app/src/main/res/layout/activity_fiilis.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_liikunta.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_ravinto.xml" value="0.22870370370370371" />
+        <entry key="app/src/main/res/layout/activity_uni.xml" value="0.25" />
         <entry key="app/src/main/res/layout/dropdownitem.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/layout_dialog.xml" value="0.13489583333333333" />
       </map>
     </option>
   </component>
