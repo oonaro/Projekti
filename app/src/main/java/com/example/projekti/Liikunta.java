@@ -14,11 +14,10 @@ import android.widget.Toast;
 
 public class Liikunta extends AppCompatActivity {
 
-    EditText name;
+    EditText liikuntaminuutit;
     Button button;
-    ImageButton imageButton;
     SharedPreferences sp;
-    String nameStr;
+    String liikuntaminuutitStr;
 
 
     @Override
@@ -27,32 +26,26 @@ public class Liikunta extends AppCompatActivity {
         setContentView(R.layout.activity_liikunta);
 
 
-        name = findViewById(R.id.editTextNumber);
+        liikuntaminuutit = findViewById(R.id.editTextNumber);
         button = findViewById(R.id.tallenna);
-        imageButton = findViewById(R.id.tarkastele);
 
-        sp = getSharedPreferences( "Nimi tähä", Context.MODE_PRIVATE);
+        sp = getSharedPreferences("Nimi tähä", Context.MODE_PRIVATE);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                nameStr = name.getText().toString();
+                liikuntaminuutitStr = liikuntaminuutit.getText().toString();
 
                 SharedPreferences.Editor editor = sp.edit();
 
-                editor.putString("name", nameStr);
+                editor.putString("liikuntaminuutit", liikuntaminuutitStr);
                 editor.commit();
                 Toast.makeText(Liikunta.this, "Information saved", Toast.LENGTH_LONG).show();
+                finish();
+
 
             }
         });
 
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Liikunta.this, Liikuntainfo.class);
-                startActivity(intent);
-            }
-        });
     }
 }

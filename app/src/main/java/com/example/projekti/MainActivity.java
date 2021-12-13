@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
     private ImageButton buttonUni;
     private ImageButton buttonRavinto;
     private ImageButton buttonFiilis;
+    private ImageButton imageButton;
+
+
 
     private TextView tvPituus;
     private TextView tvPaino;
@@ -43,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
         buttonUni = (ImageButton) findViewById(R.id.Uni);
         buttonRavinto = (ImageButton) findViewById(R.id.Ravinto);
         buttonFiilis = (ImageButton) findViewById(R.id.Fiilis);
+        imageButton = findViewById(R.id.tarkastele);
+
 
         SharedPreferences prefGet = getSharedPreferences("Info", MODE_PRIVATE);
         SharedPreferences sp = getSharedPreferences("Start", MODE_PRIVATE);
@@ -128,9 +133,25 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
                 Intent intent = new Intent(MainActivity.this, Fiilis.class);
                 startActivity(intent);
 
+
+            }
+        });
+
+
+        /**
+         * Tietojen tarkastelu activityn avaaminen imagebuttonia painamalla
+         */
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Liikuntainfo.class);
+                startActivity(intent);
             }
         });
     }
+
+
 
     /**
      * Tietoikkunan avaamiseen käytetty metodi

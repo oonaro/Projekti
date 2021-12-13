@@ -67,18 +67,6 @@
         app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageButton
-        android:id="@+id/tarkastele"
-        android:layout_width="101dp"
-        android:layout_height="108dp"
-        android:layout_marginBottom="84dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.151"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/analysis" />
 
     <EditText
         android:id="@+id/editTextNumber"
