@@ -15,12 +15,14 @@ import android.widget.Toast;
 
 public class Liikunta extends AppCompatActivity {
 
-    EditText liikuntaminuutit;
+    EditText arkiliikunta;
     Button button;
     SharedPreferences sp;
-    String liikuntaminuutitStr;
+    String arkiliikuntaStr;
     SeekBar seekBar;
     int seekBarStr;
+    EditText aktiiviliikunta;
+    String aktiiviliikuntaStr;
 
 
     @Override
@@ -29,7 +31,8 @@ public class Liikunta extends AppCompatActivity {
         setContentView(R.layout.activity_liikunta);
 
 
-        liikuntaminuutit = findViewById(R.id.editTextNumber);
+        arkiliikunta = findViewById(R.id.editText_arkiliikunta);
+        aktiiviliikunta = findViewById(R.id.editText_aktiiviliikunta);
         button = findViewById(R.id.tallenna);
         seekBar = findViewById(R.id.seekBar2);
 
@@ -38,20 +41,18 @@ public class Liikunta extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                liikuntaminuutitStr = liikuntaminuutit.getText().toString();
+                arkiliikuntaStr = arkiliikunta.getText().toString();
+                aktiiviliikuntaStr = aktiiviliikunta.getText().toString();
                 seekBarStr = seekBar.getProgress();
 
                 SharedPreferences.Editor editor = sp.edit();
 
-                editor.putString("liikuntaminuutit", liikuntaminuutitStr);
+                editor.putString("liikuntaminuutit", arkiliikuntaStr);
                 editor.putString("askeleet", String.valueOf(seekBarStr));
 
                 editor.commit();
                 Toast.makeText(Liikunta.this, "Tiedot tallennettu", Toast.LENGTH_LONG).show();
                 finish();
-
-
-
             }
         });
 

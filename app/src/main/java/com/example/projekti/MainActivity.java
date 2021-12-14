@@ -1,10 +1,17 @@
 package com.example.projekti;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -25,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
     private ImageButton buttonRavinto;
     private ImageButton buttonFiilis;
     private ImageButton imageButton;
-
+    private Button button_luo_muistutus;
 
 
     private TextView tvPituus;
@@ -150,6 +157,15 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
                 startActivity(intent);
             }
         });
+
+        Button createNotificationButton = findViewById(R.id.button_luo_muistutus);
+
+        createNotificationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addNotification();
+            }
+        });
     }
 
 
@@ -198,4 +214,32 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
         prefEditor.commit();
     }
 
+    private void createNotificationChannel(){
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = getString(R.string.muistutukset);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("muistutukset_id", "muistutukset", NotificationManager.IMPORTANCE_LOW);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
+
+    private void addNotification() {
+        Log.i("TESTI", "muistutus");
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "muistutukset_id")
+                .setContentTitle("Muistutus")
+                .setContentText("Muista täyttää elämäntapapäiväkirjaasi")
+                .setSmallIcon(R.drawable.runner);
+
+        Intent notificationIntent = new Intent (this, MainActivity.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+        builder.setContentIntent(contentIntent);
+
+        NotificationManager manager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+        manager.notify(0, builder.build());
+    }
 }

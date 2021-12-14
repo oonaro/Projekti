@@ -22,8 +22,6 @@ public class Fiilis extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fiilis);
 
-
-
         fiilis = findViewById(R.id.editTextTextPersonName2);
         button = findViewById(R.id.tallenna2);
 

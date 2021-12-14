@@ -6,12 +6,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 public class Uni extends AppCompatActivity {
@@ -29,9 +26,9 @@ public class Uni extends AppCompatActivity {
         setContentView(R.layout.activity_uni);
 
 
-            unenmaara = findViewById(R.id.editTextNumber2);
-            button = findViewById(R.id.tallenna3);
-            unenArvio = findViewById(R.id.radioGroup);
+            unenmaara = findViewById(R.id.editText_uniMaara);
+            button = findViewById(R.id.UniTallenna);
+            unenArvio = findViewById(R.id.radioGroup_uniTarpeeksi);
 
             sp = getSharedPreferences("Nimi tähä", Context.MODE_PRIVATE);
 
@@ -45,10 +42,10 @@ public class Uni extends AppCompatActivity {
                     SharedPreferences.Editor editor = sp.edit();
 
 
-                    if (selectedId == R.id.radioButton) {
+                    if (selectedId == R.id.radioButton_uniKylla) {
                         editor.putString("unenarvio", "Kyllä");
 
-                    } else if (selectedId == R.id.radioButton2) {
+                    } else if (selectedId == R.id.radioButton_uniEi) {
                         editor.putString("unenarvio", "Ei");
 
                     }
