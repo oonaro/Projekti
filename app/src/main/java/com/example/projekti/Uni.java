@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.SeekBar;
 import android.widget.Toast;
 
 public class Uni extends AppCompatActivity {
@@ -18,6 +19,8 @@ public class Uni extends AppCompatActivity {
     SharedPreferences sp;
     String unenmaaraStr;
     RadioGroup unenArvio;
+    SeekBar seekBar;
+    int seekBarStr;
 
 
     @Override
@@ -29,13 +32,17 @@ public class Uni extends AppCompatActivity {
             unenmaara = findViewById(R.id.editText_uniMaara);
             button = findViewById(R.id.UniTallenna);
             unenArvio = findViewById(R.id.radioGroup_uniTarpeeksi);
+            seekBar = findViewById(R.id.seekBar_uniLaatu);
 
-            sp = getSharedPreferences("Nimi tähä", Context.MODE_PRIVATE);
+
+        sp = getSharedPreferences("Nimi tähä", Context.MODE_PRIVATE);
 
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     unenmaaraStr = unenmaara.getText().toString();
+                    seekBarStr = seekBar.getProgress();
+
                     // get selected radio button from radioGroup
                     int selectedId = unenArvio.getCheckedRadioButtonId();
 
@@ -52,6 +59,8 @@ public class Uni extends AppCompatActivity {
 
 
                     editor.putString("unenmäärä", unenmaaraStr);
+                    editor.putString("unenlaatu", String.valueOf(seekBarStr));
+
 
                     Toast.makeText(getBaseContext(), "Tiedot tallennettu", Toast.LENGTH_SHORT).show();
                     editor.commit();

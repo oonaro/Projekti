@@ -16,9 +16,9 @@ import android.widget.Toast;
 public class Liikunta extends AppCompatActivity {
 
     EditText arkiliikunta;
+    String arkiliikuntaStr;
     Button button;
     SharedPreferences sp;
-    String arkiliikuntaStr;
     SeekBar seekBar;
     int seekBarStr;
     EditText aktiiviliikunta;
@@ -47,11 +47,12 @@ public class Liikunta extends AppCompatActivity {
 
                 SharedPreferences.Editor editor = sp.edit();
 
+                editor.putString("liikuntaminuutit2", aktiiviliikuntaStr);
                 editor.putString("liikuntaminuutit", arkiliikuntaStr);
                 editor.putString("askeleet", String.valueOf(seekBarStr));
 
                 editor.commit();
-                Toast.makeText(Liikunta.this, "Tiedot tallennettu", Toast.LENGTH_LONG).show();
+                Toast.makeText(Liikunta.this, "Information saved", Toast.LENGTH_LONG).show();
                 finish();
             }
         });
