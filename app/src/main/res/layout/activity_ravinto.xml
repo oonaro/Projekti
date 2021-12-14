@@ -84,6 +84,7 @@
         app:layout_constraintVertical_bias="0.25" />
 
     <RadioGroup
+        android:id="@+id/kalorisuositus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -180,6 +181,7 @@
         app:layout_constraintVertical_bias="0.63" />
 
     <RadioGroup
+        android:id="@+id/vettaRiittavasti"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
