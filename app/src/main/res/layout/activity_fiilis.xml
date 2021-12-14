@@ -7,35 +7,40 @@
     tools:context=".Fiilis">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/fiilisOtsikko"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Fiilis"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.157" />
+        app:layout_constraintVertical_bias="0.1" />
 
     <SeekBar
-        android:id="@+id/seekBar"
+        android:id="@+id/seekBar_fiilis"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="305dp"
         android:layout_height="46dp"
-        android:layout_marginTop="228dp"
-        android:max="5"
-        android:progress="3"
+        android:max="4"
+        android:progress="2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView_asteikko"
         android:layout_width="310dp"
         android:layout_height="55dp"
         android:text="Arvioi tämän päivän yleistä fiilistäsi asteikolla 0-5, jossa 0 on ihan kamala ja 5 on täydellinen"
+        android:textAlignment="center"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.544"
@@ -48,12 +53,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Kuvaile omin sanoin päivän fiiliksiä"
+        android:textAlignment="center"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.283"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.467" />
+        app:layout_constraintVertical_bias="0.45" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
@@ -63,10 +70,10 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.585"
+        app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.542"
+        app:layout_constraintVertical_bias="0.55"
         tools:ignore="SpeakableTextPresentCheck" />
 
 
@@ -74,12 +81,13 @@
         android:id="@+id/tallenna2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="228dp"
         android:text="Tallenna"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
 
 
 
