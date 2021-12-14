@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Tähän projektin nimi
@@ -196,4 +197,5 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
         prefEditor.putString("prefNimi", prefNimi);
         prefEditor.commit();
     }
+
 }

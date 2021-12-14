@@ -41,7 +41,7 @@ public class Ravinto extends AppCompatActivity {
                 editor.putString("ruoka", ruokaStr);
                 editor.putString("kalorit", kaloritStr);
                 editor.commit();
-                Toast.makeText(Ravinto.this, "Information saved", Toast.LENGTH_LONG).show();
+                Toast.makeText(Ravinto.this, "Tiedot tallennettu", Toast.LENGTH_LONG).show();
                 finish();
             }
         });

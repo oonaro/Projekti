@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -18,6 +20,7 @@ public class Uni extends AppCompatActivity {
     Button button;
     SharedPreferences sp;
     String unenmaaraStr;
+    RadioGroup unenArvio;
 
 
     @Override
@@ -28,6 +31,7 @@ public class Uni extends AppCompatActivity {
 
             unenmaara = findViewById(R.id.editTextNumber2);
             button = findViewById(R.id.tallenna3);
+            unenArvio = findViewById(R.id.radioGroup);
 
             sp = getSharedPreferences("Nimi tähä", Context.MODE_PRIVATE);
 
@@ -35,12 +39,25 @@ public class Uni extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     unenmaaraStr = unenmaara.getText().toString();
+                    // get selected radio button from radioGroup
+                    int selectedId = unenArvio.getCheckedRadioButtonId();
 
                     SharedPreferences.Editor editor = sp.edit();
 
+
+                    if (selectedId == R.id.radioButton) {
+                        editor.putString("unenarvio", "Kyllä");
+
+                    } else if (selectedId == R.id.radioButton2) {
+                        editor.putString("unenarvio", "Ei");
+
+                    }
+
+
                     editor.putString("unenmäärä", unenmaaraStr);
+
+                    Toast.makeText(getBaseContext(), "Tiedot tallennettu", Toast.LENGTH_SHORT).show();
                     editor.commit();
-                    Toast.makeText(Uni.this, "Information saved", Toast.LENGTH_LONG).show();
                     finish();
 
                 }

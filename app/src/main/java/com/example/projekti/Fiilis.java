@@ -38,7 +38,7 @@ public class Fiilis extends AppCompatActivity {
 
                 editor.putString("fiilis", fiilisStr);
                 editor.commit();
-                Toast.makeText(Fiilis.this, "Information saved", Toast.LENGTH_LONG).show();
+                Toast.makeText(Fiilis.this, "Tiedot tallennettu", Toast.LENGTH_LONG).show();
                 finish();
 
 
