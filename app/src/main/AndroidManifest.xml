@@ -11,50 +11,24 @@
         android:theme="@style/Theme.Projekti">
         <activity
             android:name=".Liikuntainfo"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.projekti.MainActivity" />
+            android:exported="false" />
 
 
         <activity
             android:name=".Fiilis"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.projekti.MainActivity" />
+            android:exported="false" />
 
         <activity
             android:name=".Ravinto"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.projekti.MainActivity" />
+            android:exported="false" />
 
         <activity
             android:name=".Uni"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.projekti.MainActivity" />
-
-
+            android:exported="false"/>
 
         <activity
             android:name=".Liikunta"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.projekti.MainActivity" />
+            android:exported="false"/>
 
         <activity
             android:name=".MainActivity"

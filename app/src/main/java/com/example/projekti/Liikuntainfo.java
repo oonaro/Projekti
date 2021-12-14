@@ -3,11 +3,17 @@ package com.example.projekti;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 public class Liikuntainfo extends AppCompatActivity {
+
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +31,9 @@ public class Liikuntainfo extends AppCompatActivity {
         ruokaTV = findViewById(R.id.ruokaTV);
         kaloritTV = findViewById(R.id.kaloritTV);
 
+        button = findViewById(R.id.palaa);
+
+
         SharedPreferences sp = getApplicationContext().getSharedPreferences("Nimi tähä", Context.MODE_PRIVATE);
         String liikuntaminuutit = sp.getString("liikuntaminuutit", "");
         String fiilis = sp.getString("fiilis", "");
@@ -37,5 +46,14 @@ public class Liikuntainfo extends AppCompatActivity {
         t3.setText(unenmaara + " tuntia");
         ruokaTV.setText(ruoka);
         kaloritTV.setText(kalorit + " kaloria");
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
     }
 }
+
