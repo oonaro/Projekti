@@ -160,6 +160,7 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
 
         Button createNotificationButton = findViewById(R.id.button_luo_muistutus);
 
+        createNotificationChannel();
         createNotificationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
