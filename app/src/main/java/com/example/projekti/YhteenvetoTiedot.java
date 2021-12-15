@@ -79,10 +79,10 @@ public class YhteenvetoTiedot {
         return date +"\n\nLiikunta:\n\nArkiliikunta: " + liikuntaminuutit + " min\nAktiiviliikunta: " + liikuntaminuutit2 +
                 " min\nNoin " + askeleet + " 000 askelta\n\nRavinto:\n\nPäivän ruoka: " + ruoka
                 + "\nKalorit: " + kalorit + " kaloria\nTäyttyikö kalorisuositus: " + kalorisuositus
-                + "\nRuoan terveellisyys: " + terveellisesti + "/11\nRuoan riittävyys: " + tarpeeksi
-                + "/11\nJoitko tarpeeksi vettä: " + vesi + "\n\nUni:\n\nUnen määrä: " + unenmaara
+                + "\nRuoan terveellisyys: " + terveellisesti + "/10\nRuoan riittävyys: " + tarpeeksi
+                + "/10\nJoitko tarpeeksi vettä: " + vesi + "\n\nUni:\n\nUnen määrä: " + unenmaara
                 + " tuntia\nNukuitko tarpeeksi: " + unenarvio + "\nUnen laatu: " + unenlaatu
-                + "/11\nUnet: " + unet + "\n\nFiilis:\n\nArvio päivän fiiliksestä: " + fiilisasteikko
+                + "/10\nUnet: " + unet + "\n\nFiilis:\n\nArvio päivän fiiliksestä: " + fiilisasteikko
                 + "/5\n" + fiilis;
     }
 

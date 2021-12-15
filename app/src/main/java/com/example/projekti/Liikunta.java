@@ -69,7 +69,7 @@ public class Liikunta extends AppCompatActivity {
 
                 editor.commit();
 
-                Toast.makeText(Liikunta.this, "Information saved", Toast.LENGTH_LONG).show();
+                Toast.makeText(Liikunta.this, "Tiedot tallennettu", Toast.LENGTH_LONG).show();
                 finish();
             }
         });
