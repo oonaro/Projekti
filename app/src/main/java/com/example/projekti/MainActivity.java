@@ -1,22 +1,14 @@
 package com.example.projekti;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Tähän projektin nimi
@@ -32,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
     private ImageButton buttonRavinto;
     private ImageButton buttonFiilis;
     private ImageButton imageButton;
-    private Button button_luo_muistutus;
+
 
 
     private TextView tvPituus;
@@ -158,6 +150,10 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
             }
         });
 
+        /**
+         * Muistutuksen luominen nappulaa painamalla
+         */
+
         ImageButton createNotificationButton = findViewById(R.id.muistutukset);
 
         createNotificationChannel();
@@ -215,6 +211,10 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
         prefEditor.commit();
     }
 
+    /**
+     * Muistutukseen luotu kanava
+     */
+
     private void createNotificationChannel(){
         // Create the NotificationChannel, but only on API 26+ because
         // the NotificationChannel class is new and not in the support library
@@ -228,6 +228,11 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
             notificationManager.createNotificationChannel(channel);
         }
     }
+
+    /**
+     * @author Milla Rasimus
+     * Metodi, joka luo muistutuksen
+     */
 
     private void addNotification() {
         Log.i("TESTI", "muistutus");

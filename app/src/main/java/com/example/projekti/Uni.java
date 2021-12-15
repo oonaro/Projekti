@@ -1,7 +1,5 @@
 package com.example.projekti;
 
-
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -23,8 +21,7 @@ public class Uni extends AppCompatActivity {
     RadioGroup unenArvio;
     SeekBar seekBar;
     int seekBarStr;
-    EditText unet;
-    String unetStr;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +33,6 @@ public class Uni extends AppCompatActivity {
             button = findViewById(R.id.UniTallenna);
             unenArvio = findViewById(R.id.radioGroup_uniTarpeeksi);
             seekBar = findViewById(R.id.seekBar_uniLaatu);
-            unet = findViewById(R.id.EditText_unet);
 
 
         sp = getSharedPreferences("Nimi tähä", Context.MODE_PRIVATE);
@@ -46,8 +42,6 @@ public class Uni extends AppCompatActivity {
                 public void onClick(View view) {
                     unenmaaraStr = unenmaara.getText().toString();
                     seekBarStr = seekBar.getProgress();
-                    unetStr = unet.getText().toString();
-
 
                     // get selected radio button from radioGroup
                     int selectedId = unenArvio.getCheckedRadioButtonId();
@@ -64,9 +58,8 @@ public class Uni extends AppCompatActivity {
                     }
 
 
-                    editor.putString("unenmaara", unenmaaraStr);
+                    editor.putString("unenmäärä", unenmaaraStr);
                     editor.putString("unenlaatu", String.valueOf(seekBarStr));
-                    editor.putString("unet", unetStr);
 
 
                     Toast.makeText(getBaseContext(), "Tiedot tallennettu", Toast.LENGTH_SHORT).show();
