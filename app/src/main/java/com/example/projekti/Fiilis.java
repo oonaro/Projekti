@@ -36,7 +36,6 @@ public class Fiilis extends AppCompatActivity {
         button = findViewById(R.id.tallenna2);
         seekBar = findViewById(R.id.seekBar_fiilis);
 
-
         sp = getSharedPreferences("Nimi tähä", Context.MODE_PRIVATE);
 
         /**
@@ -49,13 +48,11 @@ public class Fiilis extends AppCompatActivity {
          *joilla parametrit voidaan hakea myohemmin
          */
 
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 fiilisStr = fiilis.getText().toString();
                 seekBarStr = seekBar.getProgress();
-
 
                 SharedPreferences.Editor editor = sp.edit();
 
@@ -65,10 +62,7 @@ public class Fiilis extends AppCompatActivity {
                 editor.commit();
                 Toast.makeText(Fiilis.this, "Tiedot tallennettu", Toast.LENGTH_LONG).show();
                 finish();
-
-
             }
         });
-
     }
 }

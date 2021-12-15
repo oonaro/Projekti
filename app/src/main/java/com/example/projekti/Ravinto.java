@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Ravinto extends AppCompatActivity {
@@ -26,7 +27,10 @@ public class Ravinto extends AppCompatActivity {
     int seekBarStr;
     int seekBarStr2;
     RadioGroup vesi;
-
+    String klrStr;
+    int klrInt;
+    int klrSuositus;
+    TextView tayttyyko;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +44,14 @@ public class Ravinto extends AppCompatActivity {
         seekBar = findViewById(R.id.seekBar_tarpeeksi);
         seekBar2 = findViewById(R.id.seekBar_terveellisesti);
         vesi = findViewById(R.id.vettaRiittavasti);
+        tayttyyko = findViewById(R.id.textView_tayttyyko);
 
+        SharedPreferences prefGet = getApplicationContext().getSharedPreferences("Info", Context.MODE_PRIVATE);
+        klrStr = prefGet.getString("prefPaino", "Paino");
+        klrInt = Integer.valueOf(klrStr);
+        klrSuositus = klrInt * 30;
 
+        tayttyyko.setText("Täyttyikö päivän kalorisuositus? Suosituksesi on " + klrSuositus);
 
         sp = getSharedPreferences("Nimi tähä", Context.MODE_PRIVATE);
 
@@ -53,22 +63,17 @@ public class Ravinto extends AppCompatActivity {
                 seekBarStr = seekBar.getProgress();
                 seekBarStr2 = seekBar2.getProgress();
 
-
-
                 // get selected radio button from radioGroup
                 int selectedId = kalorisuositus.getCheckedRadioButtonId();
 
                 SharedPreferences.Editor editor = sp.edit();
-
 
                 if (selectedId == R.id.radioButton_kylla) {
                     editor.putString("kalorisuositus", "Kyllä");
 
                 } else if (selectedId == R.id.radioButton_ei) {
                     editor.putString("kalorisuositus", "Ei");
-
                 }
-
 
                 // get selected radio button from radioGroup
                 int selectedIdVesi = vesi.getCheckedRadioButtonId();
@@ -78,15 +83,12 @@ public class Ravinto extends AppCompatActivity {
 
                 } else if (selectedIdVesi == R.id.radioButton_vettaEi) {
                     editor.putString("vesi", "Ei");
-
                 }
-
 
                 editor.putString("ruoka", ruokaStr);
                 editor.putString("kalorit", kaloritStr);
                 editor.putString("tarpeeksi", String.valueOf(seekBarStr));
                 editor.putString("terveellisesti", String.valueOf(seekBarStr2));
-
 
                 editor.commit();
                 Toast.makeText(Ravinto.this, "Tiedot tallennettu", Toast.LENGTH_LONG).show();

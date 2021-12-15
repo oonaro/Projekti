@@ -40,7 +40,6 @@ public class Liikunta extends AppCompatActivity {
         aktiiviliikunta = findViewById(R.id.editText_aktiiviliikunta);
         button = findViewById(R.id.tallenna);
         seekBar = findViewById(R.id.seekBar2);
-
         sp = getSharedPreferences("Nimi tähä", Context.MODE_PRIVATE);
 
         /**

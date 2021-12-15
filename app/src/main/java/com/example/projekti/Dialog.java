@@ -12,9 +12,12 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 
 /**
  * @author aleksialanko
+ * Käyttäjän perustietojen syottamiseen tarkoitettu popup-ikkuna
+ * Lahde: https://www.youtube.com/watch?v=ARezg1D9Zd0
  */
 
 public class Dialog extends AppCompatDialogFragment {
+
     private EditText editPituus;
     private EditText editPaino;
     private EditText editIka;
@@ -23,10 +26,16 @@ public class Dialog extends AppCompatDialogFragment {
 
     @Override
     public android.app.Dialog onCreateDialog( Bundle savedInstanceState) {
+        /**
+         * Popup-ikkunan luominen
+         */
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.layout_dialog, null);
+
+        /**
+         * Tietojen tallentaminen
+         */
 
         builder.setView(view)
                 .setTitle("Täytä tiedot")
@@ -63,6 +72,10 @@ public class Dialog extends AppCompatDialogFragment {
             throw new ClassCastException(context.toString() + "must implement DialogListener");
         }
     }
+
+    /**
+     * MainActivityssa kaytettava Interface
+     */
 
     public interface DialogListener{
         void getInfo(String pituus, String paino, String ika, String nimi);

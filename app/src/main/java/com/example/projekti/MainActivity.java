@@ -16,10 +16,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Elamantapapaivakirja
- * @author oonarosenblad, aleksialanko, Milla Rasimus
+ * @author Oona Rosenblad, Aleksi Alanko, Milla Rasimus
  * Main activity
  */
 
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
     private ImageButton buttonRavinto;
     private ImageButton buttonFiilis;
     private ImageButton imageButton;
-
+    private Button button_luo_muistutus;
 
 
     private TextView tvPituus;
@@ -55,6 +56,9 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
         buttonFiilis = (ImageButton) findViewById(R.id.Fiilis);
         imageButton = findViewById(R.id.tarkastele);
 
+        /**
+         * Luodaan SharedPreferences perustietojen tallentamiselle seka tietojen kysymiselle vain kerran
+         */
 
         SharedPreferences prefGet = getSharedPreferences("Info", MODE_PRIVATE);
         SharedPreferences sp = getSharedPreferences("Start", MODE_PRIVATE);
@@ -119,7 +123,6 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
          * Kolmannen activityn avaaminen imagebuttonia painamalla
          */
 
-
         buttonRavinto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -143,7 +146,6 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
 
             }
         });
-
 
         /**
          * Tietojen tarkastelu activityn avaaminen imagebuttonia painamalla
@@ -172,8 +174,6 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
         });
     }
 
-
-
     /**
      * Tietoikkunan avaamiseen käytetty metodi
      */
@@ -184,13 +184,11 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
     }
 
     /**
-     *
-     * @param pituus = käyttäjän asettama pituusmuuttuja
-     * @param paino = käyttäjän asettama painomuuttuja
-     * @param ika = käyttäjän asettama ikämuuttuja
-     * @param nimi = käyttäjän asettama ikämuuttuja
-     *
-     * Arvojen hakeminen Dialog-luokasta ja niiden tulostaminen näytölle
+     * @param pituus = Kayttajan asettama pituusmuuttuja
+     * @param paino = Kayttajan asettama painomuuttuja
+     * @param ika = Kayttajan asettama ikamuuttuja
+     * @param nimi = Kayttajan asettama nimimuuttuja
+     * Arvojen hakeminen Dialog-luokasta ja niiden tulostaminen naytolle
      */
 
     @Override
@@ -205,6 +203,10 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
         prefIka = ika;
         prefNimi = nimi;
     }
+
+    /**
+     * Perustietojen tallentaminen onPause-elinkaarimetodissa
+     */
 
     @Override
     protected void onPause() {

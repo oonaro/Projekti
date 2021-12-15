@@ -6,7 +6,7 @@ import java.util.Collections;
 /**
  * Elamantapapaivakirja
  * YhteenvetoTiedot luokka
- * @author oonarosenblad
+ * @author Oona Rosenblad ja Aleksi Alanko
  * luokka jossa tiedot haetaan liikuntainfo luokasta ja talletetaan Yhteenveto tiedot listalle muuttujana
  */
 
@@ -28,7 +28,6 @@ public class YhteenvetoTiedot {
     String fiilisasteikko;
     String fiilis;
     String date;
-
 
     /**
      *
@@ -85,5 +84,4 @@ public class YhteenvetoTiedot {
                 + "/10\nUnet: " + unet + "\n\nFiilis:\n\nArvio päivän fiiliksestä: " + fiilisasteikko
                 + "/5\n" + fiilis;
     }
-
 }

@@ -22,18 +22,15 @@ public class Uni extends AppCompatActivity {
     SeekBar seekBar;
     int seekBarStr;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_uni);
 
-
             unenmaara = findViewById(R.id.editText_uniMaara);
             button = findViewById(R.id.UniTallenna);
             unenArvio = findViewById(R.id.radioGroup_uniTarpeeksi);
             seekBar = findViewById(R.id.seekBar_uniLaatu);
-
 
         sp = getSharedPreferences("Nimi tähä", Context.MODE_PRIVATE);
 
@@ -48,27 +45,21 @@ public class Uni extends AppCompatActivity {
 
                     SharedPreferences.Editor editor = sp.edit();
 
-
                     if (selectedId == R.id.radioButton_uniKylla) {
                         editor.putString("unenarvio", "Kyllä");
 
                     } else if (selectedId == R.id.radioButton_uniEi) {
                         editor.putString("unenarvio", "Ei");
-
                     }
-
 
                     editor.putString("unenmäärä", unenmaaraStr);
                     editor.putString("unenlaatu", String.valueOf(seekBarStr));
 
-
                     Toast.makeText(getBaseContext(), "Tiedot tallennettu", Toast.LENGTH_SHORT).show();
                     editor.commit();
                     finish();
-
                 }
             });
-
         }
     }
 
