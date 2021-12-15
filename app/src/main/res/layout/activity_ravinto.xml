@@ -212,7 +212,7 @@
         android:id="@+id/textView_vesi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Joitko tänään riittävästi vettä?"
+        android:text="Joitko tänään riittävästi vettä (1-1,5 L) ?"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
