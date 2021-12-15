@@ -1,5 +1,13 @@
 package com.example.projekti;
 
+/**
+ * Elamantapapaivakirja
+ * Liikuntainfo luokka
+ * @author oonarosenblad
+ * luokka jossa tiedot haetaan kaikki kayttajan syottamat tiedot shared preferenssiin
+ */
+
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -19,23 +27,16 @@ import java.util.Calendar;
 public class Liikuntainfo extends AppCompatActivity {
 
     Button button;
-    TextView t1;
-    TextView t2;
-    TextView t3;
-    TextView t4;
-    TextView t5;
-    TextView t6;
-    TextView t7;
-    TextView t8;
-    TextView t9;
-    TextView t10;
-    TextView t11;
-    TextView t12;
-    TextView t13;
-    TextView t14;
+
     Calendar calendar;
     SimpleDateFormat dateFormat;
     String date;
+
+    /**
+     * Haetaan tiedot shared preferenssista key -avaimien avulla ja lisätään listalle.
+     * Luodaan myos kalenteri joka hakee sen hetkisen ajan ja lisaa sen listalle
+     *
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +71,7 @@ public class Liikuntainfo extends AppCompatActivity {
                 (date, ruoka, liikuntaminuutit, liikuntaminuutit2, unenmaara, askeleet, unenarvio, unenlaatu, unet,
                         kalorit, kalorisuositus, terveellisesti, tarpeeksi, vesi, fiilisasteikko, fiilis);
 
+
         YhteenvetoSingleton.getInstance().addYhteenveto(yhteenveto);
 
         lv.setAdapter(new ArrayAdapter<YhteenvetoTiedot>(
@@ -77,6 +79,7 @@ public class Liikuntainfo extends AppCompatActivity {
                 android.R.layout.simple_list_item_1,
                 YhteenvetoSingleton.getInstance().getYhteenveto()
         ));
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

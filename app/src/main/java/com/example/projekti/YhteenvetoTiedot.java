@@ -1,6 +1,14 @@
 package com.example.projekti;
 
 import java.util.Calendar;
+import java.util.Collections;
+
+/**
+ * Elamantapapaivakirja
+ * YhteenvetoTiedot luokka
+ * @author oonarosenblad
+ * luokka jossa tiedot haetaan liikuntainfo luokasta ja talletetaan Yhteenveto tiedot listalle muuttujana
+ */
 
 public class YhteenvetoTiedot {
 
@@ -21,6 +29,27 @@ public class YhteenvetoTiedot {
     String fiilis;
     String date;
 
+
+    /**
+     *
+     * @param unenmaara = kayttajan asettama tieto, haettu Liikuntainfo luokasta
+     * @param ruoka = kayttajan asettama tieto, haettu Liikuntainfo luokasta
+     * @param liikuntaminuutit = kayttajan asettama tieto, haettu Liikuntainfo luokasta
+     * @param liikuntaminuutit2 = kayttajan asettama tieto, haettu Liikuntainfo luokasta
+     * @param unenarvio = kayttajan asettama tieto, haettu Liikuntainfo luokasta
+     * @param unenlaatu = kayttajan asettama tieto, haettu Liikuntainfo luokasta
+     * @param unet = kayttajan asettama tieto, haettu Liikuntainfo luokasta
+     * @param kalorit = kayttajan asettama tieto, haettu Liikuntainfo luokasta
+     * @param kalorisuositus = kayttajan asettama tieto, haettu Liikuntainfo luokasta
+     * @param terveellisesti = kayttajan asettama tieto, haettu Liikuntainfo luokasta
+     * @param tarpeeksi = kayttajan asettama tieto, haettu Liikuntainfo luokasta
+     * @param vesi = kayttajan asettama tieto, haettu Liikuntainfo luokasta
+     * @param fiilisasteikko = kayttajan asettama tieto, haettu Liikuntainfo luokastaa
+     * @param fiilis = kayttajan asettama tieto, haettu Liikuntainfo luokasta
+     * @param date = kayttajan asettama tieto, haettu Liikuntainfo luokasta
+     *
+     */
+
     public YhteenvetoTiedot(String date, String ruoka, String liikuntaminuutit, String liikuntaminuutit2, String unenmaara, String askeleet, String unenarvio, String unenlaatu, String unet, String kalorit, String kalorisuositus, String terveellisesti, String tarpeeksi, String vesi, String fiilisasteikko, String fiilis) {
         this.unenmaara = unenmaara;
         this.ruoka = ruoka;
@@ -40,6 +69,11 @@ public class YhteenvetoTiedot {
         this.date = date;
     }
 
+    /**
+     * Hakee arvot (Stringit) Liikuntainfo luokasta ja tekee niista lista olion, joka saa
+     * parametreina haetut arvot
+     * */
+
     @Override
     public String toString(){
         return date +"\n\nLiikunta:\n\nArkiliikunta: " + liikuntaminuutit + " min\nAktiiviliikunta: " + liikuntaminuutit2 +
@@ -51,4 +85,5 @@ public class YhteenvetoTiedot {
                 + "/11\nUnet: " + unet + "\n\nFiilis:\n\nArvio päivän fiiliksestä: " + fiilisasteikko
                 + "/5\n" + fiilis;
     }
+
 }

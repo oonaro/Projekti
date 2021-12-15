@@ -62,7 +62,7 @@ public class Ravinto extends AppCompatActivity {
 
 
                 if (selectedId == R.id.radioButton_kylla) {
-                    editor.putString("kalorsuositus", "Kyllä");
+                    editor.putString("kalorisuositus", "Kyllä");
 
                 } else if (selectedId == R.id.radioButton_ei) {
                     editor.putString("kalorisuositus", "Ei");

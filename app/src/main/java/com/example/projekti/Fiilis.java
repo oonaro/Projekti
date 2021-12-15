@@ -1,5 +1,12 @@
 package com.example.projekti;
 
+/**
+ * Elamantapapaivakirja
+ * Fiilis activity
+ * @author oonarosenblad
+ * luokka jossa tiedot haetaan liikuntainfo luokasta ja talletetaan Yhteenveto tiedot listalle muuttujana
+ */
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -31,6 +38,17 @@ public class Fiilis extends AppCompatActivity {
 
 
         sp = getSharedPreferences("Nimi tähä", Context.MODE_PRIVATE);
+
+        /**
+         * *
+         * @param fiilis = kayttajan asettama arvo
+         * @param seekBar = kayttajan asettama arvo
+         *
+         *Lukee kayttajan syottamat tiedot ja tallentaa ne Shared Preferenssiin Stringeina (.Str)
+         *putStringissa asetetaan avaimet (liikuntaminuutit2, liikuntaminuutit ja askeleet)
+         *joilla parametrit voidaan hakea myohemmin
+         */
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

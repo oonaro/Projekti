@@ -1,5 +1,12 @@
 package com.example.projekti;
 
+/**
+ * Elamantapapaivakirja
+ * Liikunta activity
+ * @author oonarosenblad
+ * luokka jossa tiedot haetaan liikuntainfo luokasta ja talletetaan Yhteenveto tiedot listalle muuttujana
+ */
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -24,12 +31,10 @@ public class Liikunta extends AppCompatActivity {
     EditText aktiiviliikunta;
     String aktiiviliikuntaStr;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liikunta);
-
 
         arkiliikunta = findViewById(R.id.editText_arkiliikunta);
         aktiiviliikunta = findViewById(R.id.editText_aktiiviliikunta);
@@ -37,6 +42,17 @@ public class Liikunta extends AppCompatActivity {
         seekBar = findViewById(R.id.seekBar2);
 
         sp = getSharedPreferences("Nimi tähä", Context.MODE_PRIVATE);
+
+        /**
+         * *
+         * @param arkiliikunta = kayttajan asettama arvo
+         * @param aktiiviliikunta = kayttajan asettama arvo
+         * @param seekBar = kayttajan asettama arvo
+         *
+         *Lukee kayttajan syottamat tiedot ja tallentaa ne Shared Preferenssiin Stringeina (.Str)
+         *putStringissa asetetaan avaimet (liikuntaminuutit2, liikuntaminuutit ja askeleet)
+         *joilla parametrit voidaan hakea myohemmin
+         */
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +68,7 @@ public class Liikunta extends AppCompatActivity {
                 editor.putString("askeleet", String.valueOf(seekBarStr));
 
                 editor.commit();
+
                 Toast.makeText(Liikunta.this, "Information saved", Toast.LENGTH_LONG).show();
                 finish();
             }

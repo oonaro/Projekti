@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
             }
         });
 
-        Button createNotificationButton = findViewById(R.id.button_luo_muistutus);
+        ImageButton createNotificationButton = findViewById(R.id.muistutukset);
 
         createNotificationChannel();
         createNotificationButton.setOnClickListener(new View.OnClickListener() {
@@ -235,6 +235,7 @@ public class MainActivity extends AppCompatActivity implements Dialog.DialogList
                 .setContentTitle("Muistutus")
                 .setContentText("Muista täyttää elämäntapapäiväkirjaasi")
                 .setSmallIcon(R.drawable.runner);
+
 
         Intent notificationIntent = new Intent (this, MainActivity.class);
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
