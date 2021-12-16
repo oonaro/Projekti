@@ -37,7 +37,8 @@ public class YhteenvetoSingleton{
      * @return Palauttaa luodun ArrayListin Liikuntainfo-nakymaan
      */
     public ArrayList<YhteenvetoTiedot> getYhteenveto(){
-        return yhteenvedot;
+        Collections.reverse(yhteenvedot);
+        return (yhteenvedot);
     }
 
 }
