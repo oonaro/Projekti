@@ -1,5 +1,11 @@
 package com.example.projekti;
 
+/**
+ * Ravintoon liittyvat syotteet
+ * @author Oona Rosenblad, Aleksi Alanko
+ *
+ */
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;

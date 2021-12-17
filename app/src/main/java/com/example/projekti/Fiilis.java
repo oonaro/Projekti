@@ -1,12 +1,10 @@
 package com.example.projekti;
 
 /**
- * Elamantapapaivakirja
- * Fiilis activity
- * @author oonarosenblad
- * luokka jossa tiedot haetaan liikuntainfo luokasta ja talletetaan Yhteenveto tiedot listalle muuttujana
+ * Fiilikseen liittyvat syotteet
+ * @author Oona Rosenblad, Aleksi Alanko
+ *
  */
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;

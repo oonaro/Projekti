@@ -4,8 +4,7 @@ import java.util.Calendar;
 import java.util.Collections;
 
 /**
- * Elamantapapaivakirja
- * YhteenvetoTiedot luokka
+ * YhteenvetoTiedot luokka, tekee yhteenveto olion
  * @author Oona Rosenblad ja Aleksi Alanko
  * luokka jossa tiedot haetaan liikuntainfo luokasta ja talletetaan Yhteenveto tiedot listalle muuttujana
  */

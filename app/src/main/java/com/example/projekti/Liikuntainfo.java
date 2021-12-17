@@ -1,10 +1,9 @@
 package com.example.projekti;
 
 /**
- * Elamantapapaivakirja
  * Liikuntainfo luokka
  * @author oonarosenblad
- * luokka jossa tiedot haetaan kaikki kayttajan syottamat tiedot shared preferenssiin
+ * luokka jossa tiedot haetaan kaikki kayttajan syottamat tiedot shared preferenssistä
  */
 
 

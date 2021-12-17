@@ -19,7 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- * Elamantapapaivakirja
+ * Elamantapapaivakirja paaluokka
  * @author Oona Rosenblad, Aleksi Alanko, Milla Rasimus
  * Main activity
  */

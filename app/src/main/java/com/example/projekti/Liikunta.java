@@ -1,10 +1,9 @@
 package com.example.projekti;
 
 /**
- * Elamantapapaivakirja
- * Liikunta activity
- * @author oonarosenblad
- * luokka jossa tiedot haetaan liikuntainfo luokasta ja talletetaan Yhteenveto tiedot listalle muuttujana
+ * Liikuntaan liittyvat syotteet
+ * @author Oona Rosenblad, Aleksi Alanko
+ *
  */
 
 import androidx.appcompat.app.AppCompatActivity;

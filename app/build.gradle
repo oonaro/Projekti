@@ -29,7 +29,7 @@ android {
 
 dependencies {
 
-    //compileOnly files("/Users/oonarosenblad/Library/Android/sdk/platforms/android-31/android.jar")
+    compileOnly files("/Users/oonarosenblad/Library/Android/sdk/platforms/android-31/android.jar")
 
 
     implementation 'androidx.appcompat:appcompat:1.4.0'

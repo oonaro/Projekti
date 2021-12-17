@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".Liikuntainfo">
 
+    <!--    /**-->
+    <!--    * @author Oona Rosenblad-->
+    <!--    *-->
+    <!--    */-->
+
     <ListView
         android:id="@+id/yhteenvetoListView"
         android:layout_width="379dp"
